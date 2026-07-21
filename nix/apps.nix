@@ -45,7 +45,8 @@ let
   rskTuiPkg = rustPlatform.buildRustPackage {
     pname = "rsk-tui";
     version = "0.1.0";
-    sourceRoot = "source/tools/tui";  
+    src = lib.cleanSource ../..;
+    sourceRoot = "tools/tui";
     cargoLock.lockFile = ../tools/tui/Cargo.lock;
     nativeBuildInputs = [ pkgs.pkg-config ];
     buildInputs = lib.optionals pkgs.stdenv.isLinux [
