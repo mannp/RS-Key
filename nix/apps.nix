@@ -47,6 +47,7 @@ let
     version = "0.1.0";
     src = lib.cleanSource ../..;
     sourceRoot = "tools/tui";
+    cargoLock.lockFile = ../tools/tui/Cargo.lock;
     nativeBuildInputs = [ pkgs.pkg-config ];
     buildInputs = lib.optionals pkgs.stdenv.isLinux [
       pkgs.pcsclite
